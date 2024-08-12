@@ -1,0 +1,143 @@
+项目结构
+guess-number-game/
+│
+├── guess_number.py
+├── README.md
+└── LICENSE
+1. guess_number.py
+这是游戏的主代码文件。
+import random
+
+def guess_number():
+    print("欢迎来到猜数字游戏!")
+    print("我已经想好了一个1到100之间的数字。")
+
+    # 生成一个随机数字
+    number_to_guess = random.randint(1, 100)
+    guess = None
+    attempts = 0
+
+    while guess != number_to_guess:
+        try:
+            # 获取用户输入的数字
+            guess = int(input("请输入你的猜测: "))
+            attempts += 1
+
+            if guess < number_to_guess:
+                print("猜小了，再试一次!")
+            elif guess > number_to_guess:
+                print("猜大了，再试一次!")
+        except ValueError:
+            print("请输入一个有效的数字。")
+
+    print(f"恭喜你，猜对了! 你总共猜了 {attempts} 次。")
+
+if __name__ == "__main__":
+    guess_number()
+2. README.md
+# 猜数字游戏
+
+这是一个简单的猜数字小游戏，用Python编写。玩家需要猜测一个1到100之间的随机数字，程序会根据玩家的猜测给出提示，直到玩家猜中为止。
+
+## 特性
+
+- 生成1到100之间的随机数字
+- 根据玩家的输入给出“太大”或“太小”的提示
+- 显示玩家猜中数字所用的次数
+
+## 如何运行
+
+1. 克隆或下载此仓库到本地。
+
+   ```bash
+   git clone https://github.com/your-username/guess-number-game.git
+导航到项目目录。
+
+bash
+复制代码
+cd guess-number-game
+运行Python文件以开始游戏。
+
+bash
+复制代码
+python guess_number.py
+示例
+bash
+复制代码
+欢迎来到猜数字游戏!
+我已经想好了一个1到100之间的数字。
+请输入你的猜测: 50
+猜小了，再试一次!
+请输入你的猜测: 75
+猜大了，再试一次!
+请输入你的猜测: 62
+恭喜你，猜对了! 你总共猜了 3 次。
+贡献
+如果你有任何改进建议或发现了问题，欢迎通过提交issue或pull request来贡献你的代码。
+
+许可
+该项目使用MIT许可协议，详情请参阅 LICENSE 文件。
+
+sql
+复制代码
+
+### 3. `LICENSE`
+这是一个MIT许可文件，允许他人使用、复制、修改和分发你的代码。
+
+```markdown
+MIT License
+
+Copyright (c) 2024 [Your Name]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+上传到GitHub的步骤
+在本地创建项目目录
+创建一个名为 guess-number-game 的文件夹，并将上述三个文件放入其中。
+
+初始化 Git 仓库
+打开命令行或终端，导航到 guess-number-game 目录，然后执行以下命令来初始化Git仓库：
+
+bash
+复制代码
+git init
+添加文件到Git
+将所有文件添加到Git中：
+
+bash
+复制代码
+git add .
+提交文件
+提交你添加的文件：
+
+bash
+复制代码
+git commit -m "Initial commit with game code, README, and license"
+在GitHub上创建新仓库
+在GitHub上创建一个新的仓库，名称也可以是 guess-number-game。
+
+连接本地仓库到GitHub
+按照GitHub上创建仓库后的提示，将本地仓库连接到远程GitHub仓库，并推送代码：
+
+bash
+复制代码
+git remote add origin https://github.com/your-username/guess-number-game.git
+git branch -M main
+git push -u origin main
+完成这些步骤后，你的完整代码库将会在GitHub上准备就绪。你可以分享这个仓库的链接或者继续进行开发。如果有任何问题或者需要进一步帮助，请告诉我！
+
